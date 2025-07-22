@@ -42,6 +42,7 @@ export interface IMergedCellDictionary {
             value: {
                 raw: any;
                 formatted: any;
+                type: any;
             };
         }
     };

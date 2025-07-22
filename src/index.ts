@@ -64,12 +64,13 @@ function getFilledHeader(arr: any[], header: any[]) {
     return filledHeader;
 }
 
-function fillMergedCells(dict: IMergedCellDictionary, currentRowName: any, arr: any, obj: any, formattedArr: any, formattedObj: any) {
+function fillMergedCells(dict: IMergedCellDictionary, currentRowName: any, arr: any, obj: any, formattedArr: any, formattedObj: any, typesArr: any, typesObj: any) {
     for (const columnName of Object.keys(dict[currentRowName])) {
         const parentCell = dict[currentRowName][columnName].parent;
         const index = lettersToNumber(columnName) - 1;
         arr[index] = obj[columnName] = dict[parentCell.row][parentCell.column].value.raw;
         formattedArr[index] = formattedObj[columnName] = dict[parentCell.row][parentCell.column].value.formatted;
+        typesArr[index] = typesObj[columnName] = dict[parentCell.row][parentCell.column].value.type;
     }
 }
 
@@ -91,6 +92,8 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
             let formattedArr = [];
             let obj: any = {};
             let formattedObj: any = {};
+            let typesArr: any[] = [];
+            let typesObj: any = {};
             const record = rename(fclone(chunk.record), (key: string) => {
                 const keySplit = key.split(':');
                 const tag = keySplit.length === 2 ? keySplit[1] : key;
@@ -110,6 +113,10 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                             obj: {},
                             arr: []
                         },
+                        type: {
+                            obj: {},
+                            arr: []
+                        },
                         header: getFilledHeader(arr, header),
                         processedSheetSize: currentSheetProcessedSize,
                         totalSheetSize: currentSheetSize,
@@ -121,15 +128,18 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                 const ch = children[i];
                 if (ch.children) {
                     let value: any;
+                    let simpleType = 'n';
                     const type = ch.attribs?.t;
                     const columnName = ch.attribs?.r;
                     const formatId = ch.attribs?.s ? Number(ch.attribs.s) : 0;
                     if (type === 'inlineStr') {
                         value = ch.children.is.children.t.value;
+                        simpleType = 's';
                     } else {
                         value = ch.children.v.value;
                         if (type === 's') {
                             value = strings[value];
+                            simpleType = 's';
                         }
                     }
                     value = formatNumericValue(type, value);
@@ -142,28 +152,37 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                     obj[column] = value;
                     if (formatId) {
                         let numFormat = formats[formatId];
+                        let isDate: boolean;
                         if (numberFormat && numberFormat === 'excel' && typeof numFormat === 'number' && excelNumberFormat[numFormat]) {
                             numFormat = excelNumberFormat[numFormat];
                         } else if (numberFormat && typeof numberFormat === 'object') {
                             numFormat = numberFormat[numFormat];
                         }
                         if (typeof numFormat === 'string') {
+                            isDate = ssf.is_date(numFormat);
                             numFormat = numFormat.replace(/[Hh]{2}/g, 'hh');
                             value = numfmt.format(numFormat, value);
                         } else {
+                            isDate = ssf.is_date(ssf.get_table()[numFormat] || '');
                             value = ssf.format(numFormat, value);
                         }
                         value = formatNumericValue(type, value);
+                        if (isDate) {
+                          simpleType = 'd';
+                        }
                     }
                     if (dict?.[lastReceivedRow]?.[column]) {
                         dict[lastReceivedRow][column].value.formatted = value;
+                        dict[lastReceivedRow][column].value.type = simpleType;
                     }
                     formattedArr[index] = value;
                     formattedObj[column] = value;
+                    typesArr[index] = simpleType;
+                    typesObj[column] = simpleType;
                 }
             }
             if (dict?.[lastReceivedRow]) {
-                fillMergedCells(dict, lastReceivedRow, arr, obj, formattedArr, formattedObj);
+                fillMergedCells(dict, lastReceivedRow, arr, obj, formattedArr, formattedObj, typesArr, typesObj);
             }
             if (((typeof withHeader === 'number' && withHeader === lastReceivedRow - 1) || (typeof withHeader !== 'number' && withHeader)) && !header.length) {
                 for (let i = 0; i < arr.length; i++) {
@@ -181,6 +200,10 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                         obj: applyHeaderToObj(formattedObj, header),
                         arr: formattedArr,
                     },
+                    type: {
+                        obj: applyHeaderToObj(typesObj, header),
+                        arr: typesArr
+                    },
                     header: getFilledHeader(arr, header),
                     processedSheetSize: currentSheetProcessedSize,
                     totalSheetSize: currentSheetSize,
@@ -193,9 +216,11 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                 for (const unprocessedRow of unprocessedRows) {
                     let arr: any[] = [];
                     let formattedArr: any[] = [];
+                    let typesArr: any[] = [];
                     let obj: any = {};
                     let formattedObj: any = {};
-                    fillMergedCells(dict, unprocessedRow, arr, obj, formattedArr, formattedObj);
+                    let typesObj: any = {};
+                    fillMergedCells(dict, unprocessedRow, arr, obj, formattedArr, formattedObj, typesArr, typesObj);
                     this.push((ignoreEmpty && !arr.length) ? null : {
                         raw: {
                             obj: applyHeaderToObj(obj, header),
@@ -204,6 +229,10 @@ function getTransform(formats: (string | number)[], strings: string[], dict?: IM
                         formatted: {
                             obj: applyHeaderToObj(formattedObj, header),
                             arr: formattedArr,
+                        },
+                        type: {
+                            obj: applyHeaderToObj(typesObj, header),
+                            arr: typesArr
                         },
                         header: getFilledHeader(arr, header),
                         processedSheetSize: currentSheetProcessedSize,
@@ -433,7 +462,7 @@ export async function* getXlsxStreams(options: IXlsxStreamsOptions): AsyncGenera
                                     column: columnLetterStart,
                                     row: rowNumberStart,
                                 },
-                                value: { formatted: null, raw: null },
+                                value: { formatted: null, raw: null, type: null },
                             }
                         }
                     }

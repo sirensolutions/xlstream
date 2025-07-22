@@ -26,6 +26,16 @@ exports[`adds empty rows not containing data when ignoreEmpty is false 1`] = `
       },
     },
     "totalSheetSize": 1229,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -39,6 +49,10 @@ exports[`adds empty rows not containing data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1229,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -52,6 +66,10 @@ exports[`adds empty rows not containing data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1229,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -65,6 +83,10 @@ exports[`adds empty rows not containing data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1229,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -90,6 +112,16 @@ exports[`adds empty rows not containing data when ignoreEmpty is false 1`] = `
       },
     },
     "totalSheetSize": 1229,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
 ]
 `;
@@ -116,6 +148,14 @@ exports[`applies custom number format 1`] = `
       },
     },
     "totalSheetSize": 1162,
+    "type": {
+      "arr": [
+        "d",
+      ],
+      "obj": {
+        "A": "d",
+      },
+    },
   },
   {
     "formatted": {
@@ -137,6 +177,14 @@ exports[`applies custom number format 1`] = `
       },
     },
     "totalSheetSize": 1025,
+    "type": {
+      "arr": [
+        "d",
+      ],
+      "obj": {
+        "A": "d",
+      },
+    },
   },
   {
     "formatted": {
@@ -158,6 +206,14 @@ exports[`applies custom number format 1`] = `
       },
     },
     "totalSheetSize": 1041,
+    "type": {
+      "arr": [
+        "d",
+      ],
+      "obj": {
+        "A": "d",
+      },
+    },
   },
 ]
 `;
@@ -184,6 +240,14 @@ exports[`correctly formats Hh hours in date 1`] = `
       },
     },
     "totalSheetSize": 1480,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -205,6 +269,125 @@ exports[`correctly formats Hh hours in date 1`] = `
       },
     },
     "totalSheetSize": 1480,
+    "type": {
+      "arr": [
+        "d",
+      ],
+      "obj": {
+        "A": "d",
+      },
+    },
+  },
+]
+`;
+
+exports[`correctly formats dates, times and numbers 1`] = `
+[
+  {
+    "formatted": {
+      "arr": [
+        "Date time",
+        "Date",
+        "Time",
+        "Custom",
+        "Number",
+      ],
+      "obj": {
+        "A": "Date time",
+        "B": "Date",
+        "C": "Time",
+        "D": "Custom",
+        "E": "Number",
+      },
+    },
+    "header": [],
+    "processedSheetSize": 2885,
+    "raw": {
+      "arr": [
+        "Date time",
+        "Date",
+        "Time",
+        "Custom",
+        "Number",
+      ],
+      "obj": {
+        "A": "Date time",
+        "B": "Date",
+        "C": "Time",
+        "D": "Custom",
+        "E": "Number",
+      },
+    },
+    "totalSheetSize": 2885,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+        "s",
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+        "C": "s",
+        "D": "s",
+        "E": "s",
+      },
+    },
+  },
+  {
+    "formatted": {
+      "arr": [
+        "2025-01-01 12:13:14",
+        "02/01/24",
+        "01:37 PM",
+        "2025,01,01",
+        "1,234.57",
+      ],
+      "obj": {
+        "A": "2025-01-01 12:13:14",
+        "B": "02/01/24",
+        "C": "01:37 PM",
+        "D": "2025,01,01",
+        "E": "1,234.57",
+      },
+    },
+    "header": [],
+    "processedSheetSize": 2885,
+    "raw": {
+      "arr": [
+        45658.5091898148,
+        45323,
+        0.567361111111111,
+        45658.5091898148,
+        1234.567,
+      ],
+      "obj": {
+        "A": 45658.5091898148,
+        "B": 45323,
+        "C": 0.567361111111111,
+        "D": 45658.5091898148,
+        "E": 1234.567,
+      },
+    },
+    "totalSheetSize": 2885,
+    "type": {
+      "arr": [
+        "d",
+        "d",
+        "d",
+        "d",
+        "n",
+      ],
+      "obj": {
+        "A": "d",
+        "B": "d",
+        "C": "d",
+        "D": "d",
+        "E": "n",
+      },
+    },
   },
 ]
 `;
@@ -231,6 +414,14 @@ exports[`correctly handles custom format 1`] = `
       },
     },
     "totalSheetSize": 1190,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -252,6 +443,14 @@ exports[`correctly handles custom format 1`] = `
       },
     },
     "totalSheetSize": 1190,
+    "type": {
+      "arr": [
+        "n",
+      ],
+      "obj": {
+        "A": "n",
+      },
+    },
   },
 ]
 `;
@@ -278,6 +477,14 @@ exports[`correctly handles shared string if it has just one value in cell 1`] = 
       },
     },
     "totalSheetSize": 5210,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -301,6 +508,15 @@ exports[`correctly handles shared string if it has just one value in cell 1`] = 
       },
     },
     "totalSheetSize": 5210,
+    "type": {
+      "arr": [
+        ,
+        "s",
+      ],
+      "obj": {
+        "B": "s",
+      },
+    },
   },
 ]
 `;
@@ -331,6 +547,16 @@ exports[`correctly reads file created with OpenXML (with \`x\` namespaces) 1`] =
       },
     },
     "totalSheetSize": 237,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+      ],
+      "obj": {
+        "A": "n",
+        "B": "n",
+      },
+    },
   },
 ]
 `;
@@ -361,6 +587,16 @@ exports[`does not ignore empty rows with data when ignoreEmpty is false 1`] = `
       },
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -374,6 +610,10 @@ exports[`does not ignore empty rows with data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -387,6 +627,10 @@ exports[`does not ignore empty rows with data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -400,6 +644,10 @@ exports[`does not ignore empty rows with data when ignoreEmpty is false 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -425,6 +673,16 @@ exports[`does not ignore empty rows with data when ignoreEmpty is false 1`] = `
       },
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
 ]
 `;
@@ -451,6 +709,14 @@ exports[`doesn't fail when empty row has custom height 1`] = `
       },
     },
     "totalSheetSize": 1150,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -489,6 +755,20 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "s",
+        "s",
+        "s",
+      ],
+      "obj": {
+        "C": "s",
+        "D": "s",
+        "E": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -514,6 +794,16 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "n",
+      ],
+      "obj": {
+        "C": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -539,6 +829,16 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "n",
+      ],
+      "obj": {
+        "C": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -564,6 +864,16 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "n",
+      ],
+      "obj": {
+        "C": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -577,6 +887,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -590,6 +904,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -625,6 +943,21 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        "s",
+        "s",
+        "s",
+      ],
+      "obj": {
+        "D": "s",
+        "E": "s",
+        "F": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -660,6 +993,21 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        "s",
+        "s",
+        "s",
+      ],
+      "obj": {
+        "D": "s",
+        "E": "s",
+        "F": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -673,6 +1021,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -686,6 +1038,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -699,6 +1055,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -712,6 +1072,10 @@ exports[`fills merged cells with data 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -751,6 +1115,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -790,6 +1171,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -829,6 +1227,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -868,6 +1283,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -907,6 +1339,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -946,6 +1395,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -985,6 +1451,23 @@ exports[`fills merged cells with data 1`] = `
       },
     },
     "totalSheetSize": 1556,
+    "type": {
+      "arr": [
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "H": "s",
+        "I": "s",
+      },
+    },
   },
 ]
 `;
@@ -1028,6 +1511,20 @@ exports[`fills merged cells with data if header has merged cells 1`] = `
       },
     },
     "totalSheetSize": 1457,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[A] merged header #1": "n",
+        "[B] merged header #1": "n",
+        "[C] merged header #2": "n",
+        "[D] merged header #2": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1066,6 +1563,20 @@ exports[`fills merged cells with data if header has merged cells 1`] = `
       },
     },
     "totalSheetSize": 1457,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[A] merged header #1": "n",
+        "[B] merged header #1": "n",
+        "[C] merged header #2": "n",
+        "[D] merged header #2": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1100,6 +1611,18 @@ exports[`fills merged cells with data if header has merged cells 1`] = `
       },
     },
     "totalSheetSize": 1457,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "[C] merged header #2": "s",
+        "[D] merged header #2": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1134,6 +1657,18 @@ exports[`fills merged cells with data if header has merged cells 1`] = `
       },
     },
     "totalSheetSize": 1457,
+    "type": {
+      "arr": [
+        ,
+        ,
+        "s",
+        "s",
+      ],
+      "obj": {
+        "[C] merged header #2": "s",
+        "[D] merged header #2": "s",
+      },
+    },
   },
 ]
 `;
@@ -1160,6 +1695,14 @@ exports[`gets worksheet by index, even if they are reordered 1`] = `
       },
     },
     "totalSheetSize": 1057,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -1186,6 +1729,14 @@ exports[`gets worksheet by name, even if they are reordered 1`] = `
       },
     },
     "totalSheetSize": 1073,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -1216,6 +1767,16 @@ exports[`ignores empty rows 1`] = `
       },
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1241,6 +1802,16 @@ exports[`ignores empty rows 1`] = `
       },
     },
     "totalSheetSize": 1470,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
 ]
 `;
@@ -1267,6 +1838,14 @@ exports[`reads 2 sheets from XLSX file using generator 1`] = `
       },
     },
     "totalSheetSize": 1007,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1288,6 +1867,14 @@ exports[`reads 2 sheets from XLSX file using generator 1`] = `
       },
     },
     "totalSheetSize": 1073,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -1318,6 +1905,16 @@ exports[`reads XLSX file correctly 1`] = `
       },
     },
     "totalSheetSize": 1110,
+    "type": {
+      "arr": [
+        "s",
+        "n",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "n",
+      },
+    },
   },
 ]
 `;
@@ -1344,6 +1941,14 @@ exports[`reads XLSX file correctly with correct encoding 1`] = `
       },
     },
     "totalSheetSize": 2041,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -1370,6 +1975,14 @@ exports[`reads XLSX file incorrectly without encoding set 1`] = `
       },
     },
     "totalSheetSize": 2041,
+    "type": {
+      "arr": [
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+      },
+    },
   },
 ]
 `;
@@ -1407,6 +2020,17 @@ exports[`reads XLSX file with header 1`] = `
       },
     },
     "totalSheetSize": 2343,
+    "type": {
+      "arr": [
+        "s",
+        ,
+        "n",
+      ],
+      "obj": {
+        "column1": "s",
+        "column3": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1441,6 +2065,18 @@ exports[`reads XLSX file with header 1`] = `
       },
     },
     "totalSheetSize": 2343,
+    "type": {
+      "arr": [
+        ,
+        "s",
+        ,
+        "n",
+      ],
+      "obj": {
+        "column2": "s",
+        "column4": "n",
+      },
+    },
   },
 ]
 `;
@@ -1462,6 +2098,10 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -1490,6 +2130,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1518,6 +2168,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1534,6 +2194,10 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -1550,6 +2214,10 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       "obj": {},
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [],
+      "obj": {},
+    },
   },
   {
     "formatted": {
@@ -1578,6 +2246,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "header1": "s",
+        "header2": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1606,6 +2284,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "header1": "s",
+        "header2": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1634,6 +2322,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "header1": "s",
+        "header2": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1662,6 +2360,16 @@ exports[`reads XLSX file with header located in specific row 1`] = `
       },
     },
     "totalSheetSize": 1542,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+      ],
+      "obj": {
+        "header1": "s",
+        "header2": "s",
+      },
+    },
   },
 ]
 `;
@@ -1705,6 +2413,20 @@ exports[`reads XLSX file with header values being dupicated 1`] = `
       },
     },
     "totalSheetSize": 1367,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[B] header2": "n",
+        "[C] header2": "n",
+        "header1": "n",
+        "header3": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1743,6 +2465,20 @@ exports[`reads XLSX file with header values being dupicated 1`] = `
       },
     },
     "totalSheetSize": 1367,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[B] header2": "n",
+        "[C] header2": "n",
+        "header1": "n",
+        "header3": "n",
+      },
+    },
   },
 ]
 `;
@@ -1786,6 +2522,20 @@ exports[`reads XLSX file with header values being undefined 1`] = `
       },
     },
     "totalSheetSize": 1597,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[B]": "n",
+        "[C]": "n",
+        "columnA": "n",
+        "columnD": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1827,6 +2577,21 @@ exports[`reads XLSX file with header values being undefined 1`] = `
       },
     },
     "totalSheetSize": 1597,
+    "type": {
+      "arr": [
+        "n",
+        ,
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[C]": "n",
+        "[E]": "n",
+        "columnA": "n",
+        "columnD": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1875,6 +2640,24 @@ exports[`reads XLSX file with header values being undefined 1`] = `
       },
     },
     "totalSheetSize": 1597,
+    "type": {
+      "arr": [
+        "n",
+        "n",
+        "n",
+        "n",
+        "n",
+        "n",
+      ],
+      "obj": {
+        "[B]": "n",
+        "[C]": "n",
+        "[E]": "n",
+        "[F]": "n",
+        "columnA": "n",
+        "columnD": "n",
+      },
+    },
   },
 ]
 `;
@@ -1909,6 +2692,18 @@ exports[`reads XLSX file with styles.xml tags prefixed with \`x:\` correctly 1`]
       },
     },
     "totalSheetSize": 1246,
+    "type": {
+      "arr": [
+        "s",
+        "s",
+        "s",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "s",
+        "C": "s",
+      },
+    },
   },
   {
     "formatted": {
@@ -1938,6 +2733,18 @@ exports[`reads XLSX file with styles.xml tags prefixed with \`x:\` correctly 1`]
       },
     },
     "totalSheetSize": 1246,
+    "type": {
+      "arr": [
+        "n",
+        "s",
+        "n",
+      ],
+      "obj": {
+        "A": "n",
+        "B": "s",
+        "C": "n",
+      },
+    },
   },
 ]
 `;
@@ -1970,6 +2777,16 @@ exports[`reads number values with leading zeroes correctly 1`] = `
       },
     },
     "totalSheetSize": 1102,
+    "type": {
+      "arr": [
+        "s",
+        "n",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "n",
+      },
+    },
   },
   {
     "formatted": {
@@ -1995,6 +2812,16 @@ exports[`reads number values with leading zeroes correctly 1`] = `
       },
     },
     "totalSheetSize": 1102,
+    "type": {
+      "arr": [
+        "s",
+        "n",
+      ],
+      "obj": {
+        "A": "s",
+        "B": "n",
+      },
+    },
   },
 ]
 `;
