@@ -55,6 +55,10 @@ const { getXlsxStream } = require("xlstream");
         "obj": { "A": "hello", "B": 123 },
         "arr": [ "hello", 123 ]
     },
+    "type": {
+        "obj": { "A": "s", "B": "n" },
+        "arr": [ "s", "n" ]
+    },
     "header": [],
     "totalSheetSize": 1110,
     "processedSheetSize": 1110

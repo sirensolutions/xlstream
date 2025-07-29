@@ -362,3 +362,14 @@ it('correctly formats Hh hours in date', async () => {
 
     expect(data).toMatchSnapshot();
 });
+
+it('correctly formats dates, times and numbers', async () => {
+    const stream = await getXlsxStream({
+        filePath: './tests/assets/formats.xlsx',
+        sheet: 0,
+    });
+
+    const data = await iterableToArray(stream);
+
+    expect(data).toMatchSnapshot();
+});

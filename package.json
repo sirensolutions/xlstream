@@ -5,6 +5,7 @@
   "main": "lib/index",
   "types": "lib/index",
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsc -p .",
     "test": "jest --coverage",
     "codecov": "codecov"
